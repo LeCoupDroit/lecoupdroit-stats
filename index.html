@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#031835">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le Coup Droit : historique des paris</title>
+<meta name="description" content="Tous les paris tennis du Coup Droit depuis le 21 avril 2026, gagnés comme perdus.">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAwFBMVEX9/v3x8vLh5Ojh3hTa2BTv6g/l4xHh3xLe3BLOz1bS0RXR0RXR0BXPzxXOzhXNzRXR0BS1uWXCwhWZn3efoxyjphuBiDuLkRpxej9jbDVTX0JJVTQ0Qlk0QicoOEIhMjQcLDkZKTgVJDcQHjsIHTkGHDkGGzkFGzUGGzQIGjIFGjYEGjcFGTUEGTYEGTUDGTcDGTYDGTUEGDUDGDYDGDUEFTUBFjYAFTMAEzQAETcBEi8ADzIADiwADTQACjIABiZNH6AiAAACGklEQVR42mWTC5OaMBDHAXk4QIoD2JQDRAQPTw4ubVJ5DJzf/1s1L5CZOjgs2V/+u5vsKgRj+iAsfkj8ybpAFEK238xA68cKvBSw9KONAn9tiP8AISH1/7Rts1UTAEVEJtXt0fePe0VeEizEotG283y75Ld5/n1fCLKGIKTqhxj6ug7CuB8qCnBkqYL6hzw0LRhFkW8cs6GSecsqML4PmW+EaQxhlMamx4kVoGm0f4ujAbOjaVnWPo5N//JoyQbA1RwZYeZbHgCebaWhAeeyIUieA8HtI9fD/Lj3bNt2PAvGhp59d4i8gCGLMuY/OM4B7MPYh3lyGpv1JNs+hQf9B93u2A7Qjx9JoCnJWC8Auc3QAMBxHde2Xc/6mZ8URRtrehT8JBnwi+q7LrCB7R7s7CNQteBZIkwBfh7VHO8913X3vg48M/oOlLdTMt6xUGDXMGTgAIAJL3C3g580/rMbv/AagknAHdjFiZZAWDB/2TTbhsGffe7paaCo6inX1GQql+ZhABJ3kaaBmhSapmpn7keLAr1VWun7VGhBMY1nVSumkvDd4rrFu56S4O3ZXa/TqZiuYhK4hwLMasYkuDzLmpDr2L2LZkK8qRDLATXdOZm6Kw2F0L1mMWUGdC/LgbLNWNdigSsTqUBNngOtppELshXR8mBFWkQMHfpaECK1eJl8ttYIckBfwJKQXF0ncAGwHCyMlyFEi8W67R/02qieDOc/hgAAAABJRU5ErkJggg==">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#031835; --navy-2:#0C2547; --navy-3:#1A355C;
+  --ball:#D2D115; --loss:#FF6F61; --loss-ink:#FF8276;
+  --paper:#031835; --white:#08203F; --ink:#EEF2F8; --muted:#93A3BF; --line:#1B355A;
+  --void:#8C98AD;
+  --wrap:1120px;
+  --f:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f);font-size:16px;line-height:1.5;font-variant-numeric:tabular-nums}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ball);outline-offset:2px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.cond{font-stretch:72%}
+
+/* ---------- Hero ---------- */
+.hero{background:var(--navy);color:#fff;padding:28px 0 0;overflow:hidden}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:44px;height:44px;border-radius:10px}
+.brand span{font-stretch:72%;font-weight:800;font-size:22px;letter-spacing:.01em}
+.switch{display:inline-flex;background:var(--navy-2);border-radius:999px;padding:4px;gap:2px}
+.switch button{font:inherit;font-weight:600;font-size:14px;color:#C5D0E2;background:none;border:0;border-radius:999px;padding:8px 16px;cursor:pointer}
+.switch button[aria-pressed="true"]{background:var(--ball);color:var(--navy)}
+.headline{margin:56px 0 0;max-width:20ch;font-stretch:68%;font-weight:850;font-size:clamp(44px,8vw,96px);line-height:.92;letter-spacing:-.01em}
+.lede{margin:18px 0 0;max-width:60ch;color:#C5D0E2;font-size:17px}
+.curve-box{position:relative;margin-top:40px}
+.curve-box svg{display:block;width:100%;height:auto}
+.curve-label{font-size:13px;fill:#8EA0BE}
+.curve-end{font-stretch:72%;font-weight:800;font-size:22px;fill:var(--ball)}
+.strip{display:flex;gap:2px;height:22px;margin:18px 0 28px}
+.strip i{flex:1;border-radius:2px;background:var(--ball);min-width:1px}
+.strip i.P{background:var(--loss)}
+.strip i.R{background:var(--navy-3)}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:#8EA0BE;margin:-14px 0 0;padding-bottom:32px}
+.legend b{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px;background:var(--ball)}
+.legend b.P{background:var(--loss)} .legend b.R{background:var(--navy-3)}
+
+/* ---------- Scoreboard ---------- */
+.board{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.board .wrap{display:grid;grid-template-columns:1.4fr repeat(4,1fr)}
+.cell{padding:28px 20px 26px;border-left:1px solid var(--line)}
+.cell:first-child{border-left:0;padding-left:0}
+.cell dt{font-size:14px;color:var(--muted)}
+.cell dd{margin:4px 0 0;font-stretch:72%;font-weight:800;font-size:40px;line-height:1}
+.cell small{display:block;margin-top:8px;font-size:13px;color:var(--muted)}
+.meter{position:relative;height:8px;border-radius:4px;background:var(--line);margin-top:14px}
+.meter span{position:absolute;inset:0 auto 0 0;border-radius:4px;background:var(--ball)}
+.meter em{position:absolute;top:-5px;width:2px;height:18px;background:var(--loss)}
+.neg{color:var(--loss-ink)}
+
+/* ---------- Sections ---------- */
+section{padding:64px 0 0}
+h2{margin:0 0 6px;font-stretch:72%;font-weight:800;font-size:32px;line-height:1.1}
+.sub{margin:0 0 24px;color:var(--muted);max-width:68ch}
+.split{display:grid;grid-template-columns:1.5fr 1fr;gap:48px}
+
+.months svg{display:block;width:100%;height:auto}
+.months text{font-size:12px;fill:var(--muted)}
+.months .val{font-weight:700;fill:var(--ink)}
+.months .val.neg{fill:var(--loss-ink)}
+
+.mk{list-style:none;margin:0;padding:0}
+.mk li{padding:14px 0;border-top:1px solid var(--line)}
+.mk li:last-child{border-bottom:1px solid var(--line)}
+.mk .row{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.mk strong{font-weight:700}
+.mk .u{font-stretch:72%;font-weight:800;font-size:22px}
+.mk .meta{font-size:13px;color:var(--muted)}
+
+/* ---------- History ---------- */
+.tools{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.tools input::placeholder{color:var(--muted)}
+.tools input{font:inherit;flex:1 1 240px;max-width:360px;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--white);color:var(--ink)}
+.chips{display:flex;gap:6px}
+.chips button{font:inherit;font-size:14px;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--white);color:var(--ink);cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--ball);border-color:var(--ball);color:var(--navy)}
+.count{margin-left:auto;font-size:14px;color:var(--muted)}
+.table{background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{text-align:left;font-weight:600;font-size:13px;color:var(--muted);padding:12px 16px;border-bottom:1px solid var(--line);background:#0B2649}
+td{padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right}
+.match{font-weight:600}
+.tourn{display:block;font-size:13px;color:var(--muted)}
+.res{display:inline-block;font-size:13px;font-weight:700;padding:3px 10px;border-radius:999px}
+.res.G{background:rgba(210,209,21,.16);color:var(--ball)}
+.res.P{background:rgba(255,111,97,.16);color:var(--loss-ink)}
+.res.R{background:rgba(147,163,191,.14);color:var(--muted)}
+.pub{display:inline-block;margin-left:6px;font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:0 6px}
+.more{display:block;margin:16px auto 0;font:inherit;font-weight:600;padding:10px 20px;border-radius:999px;border:1px solid var(--ball);background:none;color:var(--ball);cursor:pointer}
+.empty{padding:32px 16px;text-align:center;color:var(--muted)}
+
+/* ---------- Method + footer ---------- */
+.method{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:20px}
+.method h3{margin:0 0 6px;font-size:17px}
+.method p{margin:0;color:var(--muted);font-size:15px}
+footer{margin-top:80px;background:#020E22;border-top:1px solid var(--line);color:#C5D0E2;padding:48px 0 36px}
+.cta{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-bottom:32px;border-bottom:1px solid var(--navy-3)}
+.cta p{margin:0;font-stretch:72%;font-weight:800;font-size:32px;color:#fff;line-height:1.1;max-width:22ch}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:12px 22px;border-radius:999px;background:var(--ball);color:var(--navy)}
+.btn.ghost{background:none;color:#fff;border:1px solid #4A6189}
+.legal{padding-top:24px;font-size:13px;line-height:1.6;max-width:80ch}
+.legal strong{color:#fff}
+
+@media (max-width:900px){
+  .board .wrap{grid-template-columns:1fr 1fr}
+  .cell{border-left:0;border-top:1px solid var(--line);padding-left:0}
+  .cell:first-child{grid-column:1/-1;border-top:0}
+  .split,.method{grid-template-columns:1fr}
+  .hide-m{display:none}
+}
+@media (max-width:560px){
+  .headline{margin-top:40px}
+  .cell dd{font-size:32px}
+  td,th{padding:10px 10px}
+  .count{margin-left:0;width:100%}
+}
+@media (prefers-reduced-motion:no-preference){
+  .draw{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:draw 1.4s cubic-bezier(.3,.6,.2,1) .15s forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="top">
+      <a class="brand" href="#"><img src="data:image/png;base64,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" alt=""><span>Le Coup Droit</span></a>
+      <div class="switch" role="group" aria-label="Choisir le canal">
+        <button type="button" data-v="vip" aria-pressed="true">VIP</button>
+        <button type="button" data-v="pub" aria-pressed="false">Canal public</button>
+      </div>
+    </div>
+    <h1 class="headline" id="headline"></h1>
+    <p class="lede" id="lede"></p>
+    <div class="curve-box" id="curve" aria-label="Évolution du profit cumulé en unités"></div>
+    <div class="strip" id="strip" aria-hidden="true"></div>
+    <div class="legend"><span><b></b>Gagné</span><span><b class="P"></b>Perdu</span><span><b class="R"></b>Remboursé</span><span>Un trait = un pari, du plus ancien au plus récent</span></div>
+  </div>
+</header>
+
+<div class="board">
+  <dl class="wrap" id="board"></dl>
+</div>
+
+<main class="wrap">
+  <section>
+    <div class="split">
+      <div class="months">
+        <h2>Mois par mois</h2>
+        <p class="sub">Profit en unités pour chaque mois. Les mauvais mois restent affichés.</p>
+        <div id="months"></div>
+      </div>
+      <div>
+        <h2>Par type de pari</h2>
+        <p class="sub">Vainqueur du match, nombre de jeux (over/under) ou handicap.</p>
+        <ul class="mk" id="markets"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="historique">
+    <h2>Tous les paris</h2>
+    <p class="sub">Chaque pari est ajouté ici une fois le match terminé, avec le score final.</p>
+    <div class="tools">
+      <input type="search" id="q" placeholder="Chercher un joueur ou un tournoi" aria-label="Chercher un joueur ou un tournoi">
+      <div class="chips" role="group" aria-label="Filtrer par résultat">
+        <button type="button" data-r="" aria-pressed="true">Tous</button>
+        <button type="button" data-r="G" aria-pressed="false">Gagnés</button>
+        <button type="button" data-r="P" aria-pressed="false">Perdus</button>
+      </div>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="table">
+      <table>
+        <thead><tr><th>Date</th><th>Match</th><th>Pari</th><th class="num">Cote</th><th class="hide-m">Score</th><th>Résultat</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <button type="button" class="more" id="more">Afficher plus</button>
+  </section>
+
+  <section>
+    <h2>Comment lire ces chiffres</h2>
+    <div class="method">
+      <div><h3>Une unité par pari</h3><p>Tous les calculs supposent la même mise sur chaque pari : 1 unité. Un pari gagné à 1.40 rapporte +0,40 u, un pari perdu coûte −1 u.</p></div>
+      <div><h3>Le taux à battre</h3><p>Avec une cote moyenne de <span id="avgc"></span>, il faut gagner au moins <span id="be"></span> des paris pour ne pas perdre d'argent. C'est la barre rouge sous le taux de réussite.</p></div>
+      <div><h3>Public et VIP</h3><p>Les picks du canal public sont un échantillon des paris VIP. Ils sont publiés avant les matchs et vérifiables sur le canal Telegram.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cta">
+      <p>Recevoir tous les paris, pas seulement l'échantillon public.</p>
+      <div class="btns">
+        <a class="btn" href="https://t.me/V4l3Nt1" target="_blank" rel="noopener">Rejoindre le VIP</a>
+        <a class="btn ghost" href="https://t.me/lecoupdroit" target="_blank" rel="noopener">Voir le canal public</a>
+      </div>
+    </div>
+    <div class="legal">
+      <p><strong>Jouer comporte des risques : endettement, isolement, dépendance.</strong> Pour être aidé, appelez le 09 74 75 13 13 (appel non surtaxé). Les paris sportifs sont interdits aux mineurs.</p>
+      <p>Contenu d'analyse uniquement, pas un conseil de pari. Les résultats passés ne garantissent pas les résultats futurs. Cotes relevées au moment de la publication. Mis à jour le 23 novembre 2026.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const BETS = [{"d":"2026-04-22","t":"ATP Madrid","m":"Tabilo vs Royer","p":"Victoire Tabilo","c":1.35,"r":"G","s":"6-2 6-4","pub":false},{"d":"2026-04-24","t":"WTA Madrid","m":"Mertens vs Eala","p":"Victoire Mertens","c":1.38,"r":"G","s":"6-2 6-1","pub":false},{"d":"2026-04-27","t":"WTA Madrid","m":"Andreeva vs Bondar","p":"Victoire Andreeva","c":1.19,"r":"G","s":"6-7 6-3 7-6","pub":false},{"d":"2026-04-27","t":"WTA Madrid","m":"Sabalenka vs Osaka","p":"Victoire Sabalenka","c":1.12,"r":"G","s":"6-7 6-3 6-2","pub":false},{"d":"2026-04-28","t":"ATP Madrid","m":"Etcheverry vs Fils","p":"Victoire Fils","c":1.29,"r":"G","s":"3-6 4-6","pub":false},{"d":"2026-04-29","t":"WTA Madrid","m":"Kostyuk vs Noskova","p":"Victoire Kostyuk","c":1.49,"r":"G","s":"7-6 6-0","pub":false},{"d":"2026-05-01","t":"ATP Madrid","m":"Sinner vs Fils","p":"Sinner -3.5 jeux","c":1.38,"r":"G","s":"6-2 6-4","pub":true},{"d":"2026-05-03","t":"ATP Madrid","m":"Sinner vs Zverev","p":"Victoire Sinner","c":1.16,"r":"G","s":"6-1 6-2","pub":false},{"d":"2026-05-03","t":"ATP Madrid","m":"Sinner vs Zverev","p":"Sinner -3.5 jeux","c":1.43,"r":"G","s":"6-1 6-2","pub":true},{"d":"2026-05-04","t":"WTA Rome","m":"Potapova vs Begu","p":"Victoire Potapova","c":1.13,"r":"G","s":"","pub":false},{"d":"2026-05-05","t":"ATP Rome","m":"Garin vs Choinski","p":"Victoire Garin","c":1.32,"r":"G","s":"","pub":false},{"d":"2026-05-05","t":"WTA Rome","m":"Potapova vs Bartunkova","p":"Victoire Potapova","c":1.33,"r":"G","s":"","pub":false},{"d":"2026-05-07","t":"WTA Rome","m":"Gauff vs Valentová","p":"Victoire Gauff","c":1.24,"r":"G","s":"6-3 6-4","pub":false},{"d":"2026-05-08","t":"WTA Rome","m":"Swiatek vs McNally","p":"Swiatek -5.5 jeux","c":1.49,"r":"G","s":"6-1 6-7 6-3 (18-11 jeux)","pub":false},{"d":"2026-05-09","t":"ATP Rome","m":"Rublev vs Kecmanovic","p":"Victoire Rublev","c":1.38,"r":"G","s":"6-4 6-4","pub":true},{"d":"2026-05-10","t":"ATP Rome","m":"Ruud vs Lehecka","p":"Victoire Ruud","c":1.5,"r":"G","s":"6-3 6-4","pub":false},{"d":"2026-05-10","t":"ATP Rome","m":"Cerundolo vs Musetti","p":"Musetti +2.5 jeux","c":1.5,"r":"G","s":"6-7 4-6 (Musetti gagne)","pub":false},{"d":"2026-05-11","t":"WTA Rome","m":"Potapova vs Pegula","p":"Victoire Pegula","c":1.4,"r":"G","s":"6-7 2-6","pub":false},{"d":"2026-05-13","t":"WTA Rome","m":"Svitolina vs Rybakina","p":"Svitolina +4.5 jeux","c":1.5,"r":"G","s":"2-6 6-4 6-4","pub":false},{"d":"2026-05-14","t":"WTA Rome","m":"Cirstea vs Gauff","p":"Over 18.5 jeux","c":1.34,"r":"G","s":"4-6 3-6 (19 jeux)","pub":true},{"d":"2026-05-15","t":"ATP Rome","m":"Ruud vs Darderi","p":"Over 20.5 jeux","c":1.5,"r":"P","s":"6-1 6-1","pub":false},{"d":"2026-05-17","t":"ATP Rome","m":"Sinner vs Ruud","p":"Over 19.5 jeux","c":1.54,"r":"G","s":"6-4 6-4","pub":false},{"d":"2026-05-18","t":"ATP Hambourg","m":"Shelton vs Giron","p":"Victoire Shelton","c":1.32,"r":"G","s":"6-3 4-6 7-6","pub":true},{"d":"2026-05-22","t":"WTA Rabat","m":"Udvardy vs Kalinina","p":"Victoire Kalinina","c":1.38,"r":"G","s":"0-6 3-6","pub":false},{"d":"2026-05-22","t":"ATP Hambourg","m":"Paul vs De Minaur","p":"Over 19.5 jeux","c":1.27,"r":"G","s":"2-6 6-3 6-3","pub":false},{"d":"2026-05-23","t":"ATP Hambourg","m":"Buse vs Paul","p":"Over 20.5 jeux","c":1.38,"r":"G","s":"7-6 4-6 6-3","pub":false},{"d":"2026-05-23","t":"ATP Genève","m":"Navone vs Tien","p":"Over 20.5 jeux","c":1.42,"r":"G","s":"6-3 3-6 5-7","pub":false},{"d":"2026-05-24","t":"WTA Roland-Garros","m":"Andreeva vs Ferro","p":"Over 16.5 jeux","c":1.46,"r":"G","s":"6-3 6-3","pub":true},{"d":"2026-05-25","t":"WTA Roland-Garros","m":"Jones vs Swiatek","p":"Under 17.5 jeux","c":1.32,"r":"G","s":"1-6 2-6","pub":false},{"d":"2026-05-25","t":"ATP Roland-Garros","m":"Humbert vs Mannarino","p":"Humbert -4.5 jeux","c":1.25,"r":"G","s":"6-3 6-4 6-3","pub":false},{"d":"2026-05-26","t":"WTA Roland-Garros","m":"Navarro vs Tjen","p":"Victoire Navarro","c":1.32,"r":"G","s":"6-4 6-3","pub":true},{"d":"2026-05-27","t":"WTA Roland-Garros","m":"Swiatek vs Bejlek","p":"Under 18.5 jeux","c":1.34,"r":"G","s":"6-2 6-3","pub":false},{"d":"2026-05-29","t":"ATP Roland-Garros","m":"Ruud vs Paul","p":"Over 33.5 jeux","c":1.44,"r":"G","s":"4-6 6-7 6-4 7-6 7-5","pub":false},{"d":"2026-05-30","t":"WTA Roland-Garros","m":"Gauff vs Potapova","p":"Over 18.5 jeux","c":1.35,"r":"G","s":"3 sets, Potapova gagne","pub":false},{"d":"2026-05-31","t":"WTA Roland-Garros","m":"Svitolina vs Bencic","p":"Over 20.5 jeux","c":1.5,"r":"G","s":"4-6 6-4 6-0","pub":false},{"d":"2026-06-01","t":"WTA Roland-Garros","m":"Sabalenka vs Osaka","p":"Over 18.5 jeux","c":1.37,"r":"G","s":"7-5 6-3","pub":false},{"d":"2026-06-01","t":"ATP Roland-Garros","m":"Auger-Aliassime vs Tabilo","p":"Over 35.5 jeux","c":1.47,"r":"P","s":"6-3 7-5 6-1","pub":true},{"d":"2026-06-02","t":"WTA Roland-Garros","m":"Svitolina vs Kostyuk","p":"Over 19.5 jeux","c":1.35,"r":"G","s":"3-6 6-2 2-6 (Kostyuk)","pub":false},{"d":"2026-06-02","t":"WTA Roland-Garros","m":"Andreeva vs Cirstea","p":"Over 19.5 jeux","c":1.34,"r":"P","s":"6-0 6-3","pub":false},{"d":"2026-06-02","t":"ATP Roland-Garros","m":"Jodar vs Zverev","p":"Zverev -2.5 jeux","c":1.38,"r":"G","s":"6-7 1-6 3-6","pub":false},{"d":"2026-06-03","t":"ATP Roland-Garros","m":"Auger-Aliassime vs Cobolli","p":"Over 36.5 jeux","c":1.46,"r":"G","s":"6-4 4-6 4-6 4-6","pub":true},{"d":"2026-06-03","t":"ATP Roland-Garros","m":"Berrettini vs Arnaldi","p":"Victoire Berrettini","c":1.54,"r":"P","s":"5-7 2-5 abandon Berrettini","pub":false},{"d":"2026-06-04","t":"WTA Roland-Garros","m":"Kostyuk vs Andreeva","p":"Over 20.5 jeux","c":1.5,"r":"P","s":"1-6 3-6","pub":false},{"d":"2026-06-05","t":"ATP Roland-Garros","m":"Arnaldi vs Cobolli","p":"Victoire Cobolli","c":1.4,"r":"R","s":"","pub":false},{"d":"2026-06-05","t":"ATP Roland-Garros","m":"Mensik vs Zverev","p":"Over 34.5 jeux","c":1.47,"r":"G","s":"5-7 2-6 6-3 3-6","pub":false},{"d":"2026-06-07","t":"ATP Roland-Garros","m":"Zverev vs Cobolli","p":"Victoire Zverev","c":1.25,"r":"G","s":"6-1 4-6 6-4 6-7 6-1","pub":true},{"d":"2026-06-08","t":"ATP 's-Hertogenbosch","m":"Humbert vs Ymer","p":"Humbert -3.5 jeux","c":1.5,"r":"G","s":"6-4 6-3","pub":false},{"d":"2026-06-10","t":"ATP Stuttgart","m":"Struff vs Bublik","p":"Over 22.5 jeux","c":1.52,"r":"G","s":"6-7 6-3 2-6","pub":false},{"d":"2026-06-11","t":"ATP Stuttgart","m":"Shelton vs Giron","p":"Over 22.5 jeux","c":1.39,"r":"G","s":"6-7 6-4 7-6","pub":true},{"d":"2026-06-11","t":"ATP Stuttgart","m":"Landaluce vs Fritz","p":"Victoire Fritz","c":1.4,"r":"G","s":"7-6 5-7 6-7","pub":false},{"d":"2026-06-13","t":"WTA 's-Hertogenbosch","m":"Krejcikova vs Linette","p":"Victoire Krejcikova","c":1.3,"r":"G","s":"6-3 7-6","pub":false},{"d":"2026-06-13","t":"WTA Queen's","m":"Raducanu vs Rakhimova","p":"Victoire Raducanu","c":1.2,"r":"G","s":"6-3 7-5","pub":false},{"d":"2026-06-15","t":"ATP Queen's","m":"Paul vs Svajda","p":"Victoire Paul","c":1.33,"r":"G","s":"7-5 6-3","pub":false},{"d":"2026-06-16","t":"ATP Halle","m":"Zverev vs Kopriva","p":"Under 21.5 jeux","c":1.4,"r":"P","s":"6-3 4-6 6-2","pub":false},{"d":"2026-06-18","t":"ATP Queen's","m":"Paul vs Van de Zandschulp","p":"Over 20.5 jeux","c":1.38,"r":"G","s":"7-6 6-3","pub":false},{"d":"2026-06-21","t":"ATP Halle","m":"Fritz vs Tiafoe","p":"Victoire Fritz","c":1.44,"r":"P","s":"4-6 4-6","pub":true},{"d":"2026-06-24","t":"WTA Eastbourne","m":"Ostapenko vs Udvardy","p":"Over 18.5 jeux","c":1.45,"r":"G","s":"3-6 6-1 6-2","pub":true},{"d":"2026-06-25","t":"WTA Eastbourne","m":"Ostapenko vs Sonmez","p":"Victoire Ostapenko","c":1.5,"r":"G","s":"6-3 6-0","pub":false},{"d":"2026-06-30","t":"ATP Wimbledon","m":"Shelton vs Virtanen","p":"Victoire Shelton","c":1.25,"r":"P","s":"6-4 3-6 6-7 6-2 6-7 (Virtanen)","pub":true},{"d":"2026-07-01","t":"ATP Wimbledon","m":"Djokovic vs Tsitsipas","p":"Victoire Djokovic","c":1.16,"r":"G","s":"6-3 6-4 6-2","pub":false},{"d":"2026-07-01","t":"WTA Wimbledon","m":"Gauff vs Sierra","p":"Victoire Gauff","c":1.12,"r":"G","s":"6-3 3-6 7-6","pub":false},{"d":"2026-07-01","t":"WTA Wimbledon","m":"Sabalenka vs Kessler","p":"Victoire Sabalenka","c":1.1,"r":"G","s":"6-1 7-6","pub":false},{"d":"2026-07-02","t":"WTA Wimbledon","m":"Pliskova vs Swiatek","p":"Over 18.5 jeux","c":1.31,"r":"P","s":"1-6 3-6","pub":false},{"d":"2026-07-10","t":"ATP Wimbledon","m":"Sinner vs Djokovic","p":"Sinner -2.5 jeux","c":1.24,"r":"G","s":"6-4 6-4 6-4","pub":false},{"d":"2026-07-10","t":"ATP Wimbledon","m":"Fery vs Zverev","p":"Victoire Zverev","c":1.13,"r":"G","s":"6-7 2-6 4-6","pub":false},{"d":"2026-07-11","t":"WTA Wimbledon","m":"Muchova vs Noskova","p":"Over 18.5 jeux","c":1.1,"r":"G","s":"2-6 7-5 3-6","pub":false},{"d":"2026-07-12","t":"ATP Wimbledon","m":"Sinner vs Zverev","p":"Victoire Sinner","c":1.2,"r":"G","s":"6-7 7-6 6-3 6-4","pub":false},{"d":"2026-07-13","t":"ATP Bastad","m":"De Jong vs Gaubas","p":"Victoire De Jong","c":1.43,"r":"G","s":"7-6 7-5","pub":true},{"d":"2026-07-13","t":"ATP Gstaad","m":"Collignon vs Skatov","p":"Victoire Collignon","c":1.16,"r":"G","s":"3-6 7-6 6-4","pub":false},{"d":"2026-07-14","t":"ATP Bastad","m":"Diaz Acosta vs Midon","p":"Victoire Diaz Acosta","c":1.23,"r":"P","s":"6-3 4-6 2-6","pub":true},{"d":"2026-07-14","t":"ATP Bastad","m":"Borges vs Kouame","p":"Victoire Borges","c":1.29,"r":"G","s":"6-4 6-2","pub":false},{"d":"2026-07-15","t":"WTA Athènes","m":"Dart vs Sakkari","p":"Victoire Sakkari","c":1.22,"r":"G","s":"1-6 2-6","pub":false},{"d":"2026-07-15","t":"ATP Bastad","m":"Altmaier vs Darderi","p":"Victoire Darderi","c":1.52,"r":"G","s":"4-6 4-6","pub":false},{"d":"2026-07-16","t":"WTA Athènes","m":"Krejcikova vs Monnet","p":"Under 19.5 jeux","c":1.4,"r":"G","s":"6-0 6-2","pub":false},{"d":"2026-07-18","t":"WTA Iasi","m":"Badosa vs Zidansek","p":"Victoire Badosa","c":1.26,"r":"G","s":"3-6 7-5 7-6","pub":true},{"d":"2026-07-19","t":"WTA Athènes","m":"Krejcikova vs Sakkari","p":"Over 18.5 jeux","c":1.32,"r":"G","s":"7-6 6-3","pub":false},{"d":"2026-07-20","t":"WTA Iasi","m":"Badosa vs Sherif","p":"Over 18.5 jeux","c":1.3,"r":"R","s":"4-6 0-4 abandon Badosa","pub":true},{"d":"2026-07-20","t":"WTA Prague","m":"Bouzkova vs Bouzas Maneiro","p":"Victoire Bouzkova","c":1.33,"r":"G","s":"7-5 7-5","pub":true},{"d":"2026-07-20","t":"ATP Kitzbühel","m":"Neumayer vs Hanfmann","p":"Victoire Hanfmann","c":1.31,"r":"G","s":"6-7 4-6","pub":false},{"d":"2026-07-21","t":"ATP Estoril","m":"Borges vs Luz","p":"Under 19.5 jeux","c":1.45,"r":"G","s":"6-3 6-3","pub":false},{"d":"2026-07-22","t":"ATP Estoril","m":"Borges vs Burruchaga","p":"Victoire Borges","c":1.34,"r":"P","s":"1-6 6-4 3-6","pub":true},{"d":"2026-07-22","t":"WTA Prague","m":"Bouzkova vs Lee","p":"Victoire Bouzkova","c":1.18,"r":"G","s":"7-5 6-4","pub":false},{"d":"2026-07-23","t":"ATP Kitzbühel","m":"Hanfmann vs Baez","p":"Over 20.5 jeux","c":1.4,"r":"P","s":"6-3 6-1","pub":false},{"d":"2026-07-23","t":"WTA Hambourg","m":"Sherif vs Jacquemot","p":"Victoire Sherif","c":1.42,"r":"G","s":"6-2 6-3","pub":false},{"d":"2026-07-24","t":"ATP Kitzbühel","m":"Bublik vs Etcheverry","p":"Victoire Bublik","c":1.52,"r":"G","s":"6-3 6-4","pub":false},{"d":"2026-07-25","t":"ATP Kitzbühel","m":"Bublik vs Halys","p":"Over 22.5 jeux","c":1.52,"r":"G","s":"4-6 6-7","pub":false},{"d":"2026-07-25","t":"ATP Estoril","m":"Blockx vs Darderi","p":"Darderi -1.5 jeux","c":1.5,"r":"P","s":"7-5 6-7 6-7 (19-19 jeux)","pub":false},{"d":"2026-07-27","t":"ATP Washington","m":"Tiafoe vs Atmane","p":"Victoire Tiafoe","c":1.32,"r":"P","s":"6-4 3-6 4-6","pub":true},{"d":"2026-07-28","t":"ATP Washington","m":"Humbert vs Martin","p":"Victoire Humbert","c":1.23,"r":"G","s":"6-2 7-5","pub":true},{"d":"2026-07-28","t":"ATP Washington","m":"Majchrzak vs Paul","p":"Victoire Paul","c":1.24,"r":"P","s":"7-5 7-6 (Majchrzak)","pub":false},{"d":"2026-07-29","t":"WTA Washington","m":"Krueger vs Osaka","p":"Victoire Osaka","c":1.29,"r":"G","s":"3-6 1-3 abandon Krueger","pub":false},{"d":"2026-07-29","t":"WTA Washington","m":"Shymanovich vs Volynets","p":"Victoire Volynets","c":1.23,"r":"G","s":"","pub":false},{"d":"2026-08-01","t":"WTA Washington","m":"Pegula vs Kalinskaya","p":"Over 18.5 jeux","c":1.39,"r":"G","s":"6-3 7-5","pub":true},{"d":"2026-08-02","t":"WTA Washington","m":"Pegula vs Eala","p":"Over 19.5 jeux","c":1.48,"r":"G","s":"6-4 4-6 0-6","pub":false},{"d":"2026-08-02","t":"ATP Washington","m":"Fritz vs Jodar","p":"Over 21.5 jeux","c":1.39,"r":"G","s":"7-6 6-4","pub":true},{"d":"2026-08-03","t":"ATP Montréal","m":"Berrettini vs Navone","p":"Victoire Berrettini","c":1.5,"r":"P","s":"3-6 7-6 3-6","pub":false},{"d":"2026-08-04","t":"ATP Montréal","m":"Nakashima vs Altmaier","p":"Victoire Nakashima","c":1.29,"r":"G","s":"6-2 6-1","pub":false},{"d":"2026-08-06","t":"ATP Montréal","m":"Tiafoe vs Rinderknech","p":"Victoire Tiafoe","c":1.54,"r":"P","s":"2-6 0-2 abandon Tiafoe","pub":false},{"d":"2026-08-07","t":"ATP Montréal","m":"Hurkacz vs Van de Zandschulp","p":"VDZ +3.5 jeux","c":1.52,"r":"G","s":"6-3 6-7 5-7","pub":false},{"d":"2026-08-08","t":"WTA Toronto","m":"Pegula vs Shnaider","p":"Victoire Pegula","c":1.38,"r":"P","s":"3-6 3-6","pub":true},{"d":"2026-08-08","t":"ATP Montréal","m":"Fils vs Norrie","p":"Victoire Fils","c":1.39,"r":"G","s":"6-2 7-6","pub":false},{"d":"2026-08-10","t":"WTA Toronto","m":"Swiatek vs Shnaider","p":"Victoire Swiatek","c":1.33,"r":"G","s":"6-2 6-1","pub":false},{"d":"2026-08-12","t":"ATP Montréal","m":"Tien vs Shelton","p":"Victoire Shelton","c":1.5,"r":"G","s":"2-6 3-6","pub":true},{"d":"2026-08-13","t":"ATP Cincinnati","m":"Norrie vs Prizmic","p":"Victoire Norrie","c":1.5,"r":"G","s":"3-6 6-1 6-4","pub":false},{"d":"2026-08-14","t":"ATP Cincinnati","m":"Royer vs Tsitsipas","p":"Victoire Tsitsipas","c":1.3,"r":"G","s":"6-7 5-7","pub":false},{"d":"2026-08-16","t":"ATP Cincinnati","m":"Shelton vs Faria","p":"Victoire Shelton","c":1.17,"r":"P","s":"4-6 4-6","pub":false},{"d":"2026-08-16","t":"WTA Cincinnati","m":"Sabalenka vs Gibson","p":"Victoire Sabalenka","c":1.11,"r":"G","s":"6-2 7-6","pub":false},{"d":"2026-08-16","t":"WTA Cincinnati","m":"Gauff vs Samsonova","p":"Victoire Gauff","c":1.31,"r":"G","s":"2-6 6-4 6-1","pub":true},{"d":"2026-08-17","t":"WTA Cincinnati","m":"Rybakina vs Frech","p":"Victoire Rybakina","c":1.14,"r":"G","s":"6-4 7-6","pub":false},{"d":"2026-08-17","t":"WTA Cincinnati","m":"Pegula vs Navarro","p":"Victoire Pegula","c":1.2,"r":"G","s":"7-5 6-2","pub":false},{"d":"2026-08-17","t":"WTA Cincinnati","m":"Swiatek vs Sakkari","p":"Victoire Swiatek","c":1.13,"r":"G","s":"4-6 6-1 6-1","pub":false},{"d":"2026-08-18","t":"ATP Cincinnati","m":"Fritz vs Merida","p":"Over 17.5 jeux","c":1.12,"r":"G","s":"6-3 6-4","pub":false},{"d":"2026-08-19","t":"WTA Cincinnati","m":"Sabalenka vs Bejlek","p":"Victoire Sabalenka","c":1.14,"r":"P","s":"6-7 4-6","pub":true},{"d":"2026-08-19","t":"ATP Cincinnati","m":"Fritz vs O'Connell","p":"Victoire Fritz","c":1.1,"r":"G","s":"6-4 6-3","pub":false},{"d":"2026-08-20","t":"ATP Cincinnati","m":"Fils vs Tirante","p":"Victoire Fils","c":1.27,"r":"G","s":"6-3 6-2","pub":false},{"d":"2026-08-21","t":"ATP Cincinnati","m":"Fritz vs Nakashima","p":"Victoire Fritz","c":1.52,"r":"P","s":"6-7 6-4 3-6","pub":false},{"d":"2026-08-21","t":"ATP Cincinnati","m":"Tiafoe vs Musetti","p":"Over 20.5 jeux","c":1.34,"r":"G","s":"7-6 7-5","pub":false},{"d":"2026-08-22","t":"WTA Cincinnati","m":"Bejlek vs Gauff","p":"Victoire Gauff","c":1.28,"r":"G","s":"4-6 1-6","pub":false},{"d":"2026-08-22","t":"ATP Cincinnati","m":"Cobolli vs Fils","p":"Victoire Fils","c":1.37,"r":"G","s":"3-6 4-6","pub":true},{"d":"2026-08-22","t":"WTA Cincinnati","m":"Pegula vs Swiatek","p":"Victoire Swiatek","c":1.39,"r":"P","s":"7-5 4-6 6-4 (Pegula)","pub":false},{"d":"2026-08-23","t":"ATP Cincinnati","m":"Tiafoe vs Fils","p":"Victoire Fils","c":1.46,"r":"G","s":"3-6 6-1 0-6","pub":false},{"d":"2026-08-24","t":"ATP Winston-Salem","m":"Safiullin vs Grenier","p":"Victoire Safiullin","c":1.19,"r":"P","s":"6-7 6-4 3-6","pub":false},{"d":"2026-08-25","t":"ATP Winston-Salem","m":"Medvedev vs Damm","p":"Victoire Medvedev","c":1.27,"r":"P","s":"5-7 3-6","pub":false},{"d":"2026-08-25","t":"ATP Winston-Salem","m":"Mannarino vs Sonego","p":"Over 18.5 jeux","c":1.12,"r":"G","s":"1-6 6-7","pub":false},{"d":"2026-08-31","t":"ATP US Open","m":"Shelton vs Griekspoor","p":"Victoire Shelton","c":1.13,"r":"G","s":"1-6 6-1 7-6 6-2","pub":true},{"d":"2026-09-01","t":"WTA US Open","m":"Sonmez vs Gauff","p":"Victoire Gauff","c":1.05,"r":"G","s":"3-6 4-6","pub":false},{"d":"2026-09-01","t":"ATP US Open","m":"Choinski vs Van de Zandschulp","p":"Victoire VDZ","c":1.26,"r":"G","s":"3-6 1-6 6-7","pub":true},{"d":"2026-09-01","t":"ATP US Open","m":"Guerrieri vs De Minaur","p":"Victoire De Minaur","c":1.04,"r":"G","s":"2-6 2-6 4-6","pub":false},{"d":"2026-09-03","t":"ATP US Open","m":"Fritz vs Bellucci","p":"Victoire Fritz","c":1.1,"r":"G","s":"6-0 6-1 6-1","pub":false},{"d":"2026-09-03","t":"ATP US Open","m":"Cobolli vs Schoolkate","p":"Victoire Cobolli","c":1.21,"r":"G","s":"3-6 6-3 6-4 7-5","pub":false},{"d":"2026-09-03","t":"WTA US Open","m":"Eala vs Oliynykova","p":"Victoire Eala","c":1.1,"r":"G","s":"6-1 6-4","pub":false},{"d":"2026-09-05","t":"WTA US Open","m":"Bouzkova vs Swiatek","p":"Victoire Swiatek","c":1.14,"r":"G","s":"6-7 6-7","pub":false},{"d":"2026-09-05","t":"WTA US Open","m":"Potapova vs Anisimova","p":"Victoire Anisimova","c":1.17,"r":"P","s":"6-2 7-5 (Potapova)","pub":false},{"d":"2026-09-05","t":"ATP US Open","m":"Khachanov vs Bonzi","p":"Victoire Khachanov","c":1.41,"r":"G","s":"6-3 6-2 6-4","pub":true},{"d":"2026-09-07","t":"WTA US Open","m":"Potapova vs Andreeva","p":"Victoire Andreeva","c":1.13,"r":"G","s":"7-5 4-6 3-6","pub":false},{"d":"2026-09-07","t":"WTA US Open","m":"Jovic vs Gauff","p":"Victoire Gauff","c":1.37,"r":"G","s":"1-6 4-6","pub":true},{"d":"2026-09-07","t":"WTA US Open","m":"Swiatek vs Zheng","p":"Victoire Swiatek","c":1.21,"r":"P","s":"5-7 3-6","pub":false},{"d":"2026-09-09","t":"ATP US Open","m":"Zverev vs Van de Zandschulp","p":"Victoire Zverev","c":1.1,"r":"G","s":"6-2 7-5 6-1","pub":false},{"d":"2026-09-09","t":"WTA US Open","m":"Rybakina vs Zheng","p":"Victoire Rybakina","c":1.31,"r":"G","s":"3-6 6-1 6-4","pub":false},{"d":"2026-09-09","t":"WTA US Open","m":"Andreeva vs Gauff","p":"Victoire Gauff","c":1.49,"r":"G","s":"6-2 6-7 2-6","pub":false},{"d":"2026-09-10","t":"WTA US Open","m":"Sabalenka vs Pegula","p":"Victoire Sabalenka","c":1.52,"r":"G","s":"7-5 6-2","pub":false},{"d":"2026-09-10","t":"WTA US Open","m":"Gauff vs Rybakina","p":"Gauff +3.5 jeux","c":1.32,"r":"G","s":"6-3 4-6 4-6 (14-15 jeux)","pub":false},{"d":"2026-09-11","t":"ATP US Open","m":"Tiafoe vs Shelton","p":"Over 3.5 sets","c":1.45,"r":"G","s":"6-4 3-6 3-6 5-7","pub":false},{"d":"2026-09-11","t":"ATP US Open","m":"Zverev vs Khachanov","p":"Over 34.5 jeux","c":1.48,"r":"G","s":"6-3 7-6 7-6","pub":false},{"d":"2026-09-12","t":"WTA US Open","m":"Sabalenka vs Rybakina","p":"Rybakina +4.5 jeux","c":1.26,"r":"G","s":"4-6 7-5 2-6","pub":false},{"d":"2026-09-13","t":"WTA Guadalajara","m":"Parks vs Lepchenko","p":"Victoire Parks","c":1.39,"r":"G","s":"","pub":true},{"d":"2026-09-14","t":"WTA São Paulo","m":"Bouzas Maneiro vs Salkova","p":"Victoire Bouzas Maneiro","c":1.29,"r":"P","s":"5-7 1-6","pub":false},{"d":"2026-09-16","t":"WTA Guadalajara","m":"Kostyuk vs Townsend","p":"Victoire Kostyuk","c":1.33,"r":"R","s":"","pub":false},{"d":"2026-09-16","t":"WTA Guadalajara","m":"Frech vs Dolehide","p":"Victoire Frech","c":1.45,"r":"G","s":"6-4 6-3","pub":false},{"d":"2026-09-17","t":"WTA Guadalajara","m":"Bucsa vs Bejlek","p":"Victoire Bejlek","c":1.52,"r":"P","s":"6-0 6-4 (Bucsa)","pub":false},{"d":"2026-09-20","t":"WTA Singapour","m":"Sakkari vs Fruhvirtova","p":"Victoire Sakkari","c":1.25,"r":"G","s":"6-4 6-1","pub":true},{"d":"2026-09-23","t":"WTA Séoul","m":"Korneeva vs Astakhova","p":"Victoire Korneeva","c":1.11,"r":"G","s":"6-2 3-6 6-1","pub":false},{"d":"2026-09-24","t":"WTA Singapour","m":"Sakkari vs Hibino","p":"Victoire Sakkari","c":1.16,"r":"G","s":"7-5 6-1","pub":false},{"d":"2026-09-24","t":"WTA Singapour","m":"Wang vs Garland","p":"Victoire Wang","c":1.28,"r":"G","s":"7-5 6-4","pub":false},{"d":"2026-09-24","t":"ATP Chengdu","m":"Harris vs Kovacevic","p":"Victoire Harris","c":1.49,"r":"G","s":"6-3 6-4","pub":true},{"d":"2026-09-27","t":"ATP Hangzhou","m":"Medvedev vs Wong","p":"Victoire Medvedev","c":1.23,"r":"G","s":"6-3 6-7 6-3","pub":false},{"d":"2026-09-27","t":"WTA Singapour","m":"Fernandez vs Gibson","p":"Victoire Fernandez","c":1.46,"r":"G","s":"7-5 6-0","pub":true},{"d":"2026-09-28","t":"ATP Hangzhou","m":"Medvedev vs Safiullin","p":"Victoire Medvedev","c":1.42,"r":"G","s":"7-5 6-4","pub":false},{"d":"2026-09-28","t":"ATP Chengdu","m":"Hurkacz vs Shapovalov","p":"Over 22.5 jeux","c":1.5,"r":"G","s":"au moins 23 jeux (sources divergentes)","pub":false},{"d":"2026-09-29","t":"ATP Hangzhou","m":"Medvedev vs Rublev","p":"Over 18.5 jeux","c":1.12,"r":"G","s":"7-5 6-4","pub":false},{"d":"2026-10-29","t":"ATP Vienne","m":"Zverev vs Griekspoor","p":"Victoire Zverev","c":1.21,"r":"G","s":"6-4 7-5","pub":true},{"d":"2026-10-29","t":"ATP Bâle","m":"Vacherot vs Jodar","p":"Vacherot +4.5 jeux","c":1.43,"r":"G","s":"7-6 2-6 7-6","pub":false},{"d":"2026-10-29","t":"ATP Vienne","m":"Fery vs Musetti","p":"Fery +4.5 jeux","c":1.44,"r":"G","s":"6-4 5-7 6-4","pub":false},{"d":"2026-11-04","t":"ATP Paris","m":"Fils vs Machac","p":"Victoire Fils","c":1.49,"r":"G","s":"6-3 7-6","pub":true},{"d":"2026-11-08","t":"WTA Chennai","m":"Tjen vs Linette","p":"Linette +5.5 jeux","c":1.31,"r":"G","s":"7-5 1-6 4-6","pub":false},{"d":"2026-11-20","t":"ATP Finals Turin","m":"Medvedev vs Tiafoe","p":"Under 26.5 jeux","c":1.38,"r":"G","s":"6-3 6-4","pub":true}];
+const $ = s => document.querySelector(s);
+const fr = (n, d=1) => n.toLocaleString('fr-FR',{minimumFractionDigits:d,maximumFractionDigits:d});
+const sgn = (n, d=1) => (n>0?'+':n<0?'−':'')+fr(Math.abs(n),d);
+const pct = n => fr(n*100,1)+' %';
+const MOIS = ['janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'];
+const dfmt = s => { const [y,m,d]=s.split('-'); return `${+d} ${MOIS[m-1]}`; };
+const pl = b => b.r==='G' ? b.c-1 : b.r==='P' ? -1 : 0;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function stats(L){
+  const s = L.filter(b=>b.r!=='R'), g = s.filter(b=>b.r==='G').length;
+  const profit = s.reduce((a,b)=>a+pl(b),0), avg = s.reduce((a,b)=>a+b.c,0)/s.length;
+  let cum=0, peak=0, dd=0, run=0, worst=0;
+  for (const b of L){ cum+=pl(b); peak=Math.max(peak,cum); dd=Math.max(dd,peak-cum);
+    if(b.r==='P'){run++;worst=Math.max(worst,run)} else if(b.r==='G') run=0; }
+  return {n:s.length, g, p:s.length-g, v:L.length-s.length, wr:g/s.length, avg, be:1/avg, profit, roi:profit/s.length, dd, worst};
+}
+
+function curve(L){
+  const W=Math.max(320,$('#curve').clientWidth||1072), H=W<600?220:300, pt=20, pb=34, pl_=8, pr=W<600?54:78;
+  let cum=0; const ys=[0, ...L.map(b=>cum+=pl(b))];
+  const mn=Math.min(0,...ys), mx=Math.max(...ys);
+  const x=i=>pl_+i*(W-pl_-pr)/(ys.length-1), y=v=>pt+(mx-v)*(H-pt-pb)/((mx-mn)||1);
+  const d=ys.map((v,i)=>(i?'L':'M')+x(i).toFixed(1)+' '+y(v).toFixed(1)).join('');
+  const r=mx-mn, step = r>40?10:r>12?5:r>5?2:1; let grid='';
+  for(let v=Math.ceil(mn/step)*step; v<=mx; v+=step)
+    grid+=`<line x1="${pl_}" x2="${W-pr}" y1="${y(v)}" y2="${y(v)}" stroke="${v===0?'#4A6189':'#1A355C'}" stroke-width="1"/><text class="curve-label" x="${W-pr+10}" y="${y(v)+4}">${v>0?'+':''}${v} u</text>`;
+  const months=[]; L.forEach((b,i)=>{const m=b.d.slice(0,7); if(!months.length||months.at(-1).m!==m) months.push({m,i:i+1});});
+  let nextX=1e9; const ticks=months.slice().reverse().filter(o=>{const ok=nextX-x(o.i)>44; if(ok) nextX=x(o.i); return ok;}).map(o=>`<text class="curve-label" x="${x(o.i)}" y="${H-10}" text-anchor="middle">${MOIS[+o.m.slice(5)-1]}</text>`).join('');
+  const last=ys.at(-1), area=d+`L${x(ys.length-1)} ${y(mn)}L${x(0)} ${y(mn)}Z`;
+  $('#curve').innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img"><title>Profit cumulé : ${sgn(last)} unités sur ${L.length} paris</title>
+    <defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D2D115" stop-opacity=".18"/><stop offset="1" stop-color="#D2D115" stop-opacity="0"/></linearGradient></defs>
+    ${grid}<path d="${area}" fill="url(#fill)"/>
+    <path class="draw" d="${d}" fill="none" stroke="#D2D115" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="${x(ys.length-1)}" cy="${y(last)}" r="5" fill="#D2D115"/>
+    ${ticks}</svg>`;
+  const p=$('#curve path.draw'); if(p) p.style.setProperty('--len', p.getTotalLength());
+}
+
+function months(L){
+  const M={}; L.forEach(b=>{const k=b.d.slice(0,7); (M[k]=M[k]||[]).push(b)});
+  const K=Object.keys(M).sort(), vals=K.map(k=>M[k].reduce((a,b)=>a+pl(b),0));
+  const W=620, H=260, top=28, base=170, bw=Math.min(56,(W-20)/K.length-14);
+  const mx=Math.max(1,...vals.map(Math.abs)), sc=(base-top)/mx*0.95, neg=Math.min(0,...vals);
+  const h=Math.max(H, base+(-neg*sc)+70);
+  const body=K.map((k,i)=>{
+    const v=vals[i], cx=10+(i+.5)*(W-20)/K.length, s=M[k].filter(b=>b.r!=='R'), g=s.filter(b=>b.r==='G').length;
+    const hh=Math.abs(v)*sc, yy=v>=0?base-hh:base;
+    return `<rect x="${cx-bw/2}" y="${yy}" width="${bw}" height="${Math.max(hh,1)}" rx="4" fill="${v>=0?'#D2D115':'#FF6F61'}"><title>${MOIS[+k.slice(5)-1]} ${k.slice(0,4)} : ${sgn(v,2)} u, ${g}/${s.length} gagnés</title></rect>
+      <text class="val ${v<0?'neg':''}" x="${cx}" y="${v>=0?yy-8:yy+hh+16}" text-anchor="middle">${sgn(v)}</text>
+      <text x="${cx}" y="${h-32}" text-anchor="middle">${MOIS[+k.slice(5)-1]}</text>
+      <text x="${cx}" y="${h-14}" text-anchor="middle">${g}/${s.length}</text>`;
+  }).join('');
+  $('#months').innerHTML=`<svg viewBox="0 0 ${W} ${h}" role="img" aria-label="Profit par mois"><line x1="0" x2="${W}" y1="${base}" y2="${base}" stroke="#1B355A"/>${body}</svg>`;
+}
+
+function marketOf(p){ if(/^(over|under)/i.test(p)) return 'Nombre de jeux'; if(/^victoire/i.test(p)) return 'Vainqueur du match'; return 'Handicap'; }
+function markets(L){
+  const G={}; L.forEach(b=>{const k=marketOf(b.p); (G[k]=G[k]||[]).push(b)});
+  $('#markets').innerHTML=Object.entries(G).sort((a,b)=>b[1].length-a[1].length).map(([k,v])=>{const s=stats(v);
+    return `<li><div class="row"><strong>${k}</strong><span class="u ${s.profit<0?'neg':''}">${sgn(s.profit)} u</span></div>
+      <div class="row meta"><span>${s.n} paris, ${pct(s.wr)} gagnés</span><span>ROI ${sgn(s.roi*100)} %</span></div></li>`}).join('');
+}
+
+let view='vip', filt='', q='', shown=25;
+const label = p => /^(Victoire|Over|Under)/i.test(p) ? p : 'Handicap '+p;
+
+function rows(){
+  const L=cur().slice().reverse().filter(b=>(!filt||b.r===filt) && (!q||(b.m+' '+b.t+' '+b.p).toLowerCase().includes(q)));
+  $('#count').textContent = `${L.length} pari${L.length>1?'s':''}`;
+  const R={G:'Gagné',P:'Perdu',R:'Remboursé'};
+  $('#rows').innerHTML = L.length ? L.slice(0,shown).map(b=>`<tr>
+    <td>${dfmt(b.d)}</td>
+    <td><span class="match">${esc(b.m)}</span><span class="tourn">${esc(b.t)}</span></td>
+    <td>${esc(label(b.p))}${view==='vip'&&b.pub?'<span class="pub" title="Aussi publié sur le canal public">public</span>':''}</td>
+    <td class="num">${b.c.toFixed(2)}</td>
+    <td class="hide-m">${esc(b.s||'')}</td>
+    <td><span class="res ${b.r}">${R[b.r]}</span></td></tr>`).join('')
+    : `<tr><td colspan="6" class="empty">Aucun pari ne correspond. Essayez un autre nom de joueur ou de tournoi.</td></tr>`;
+  $('#more').hidden = L.length<=shown;
+}
+
+const cur = () => view==='vip' ? BETS : BETS.filter(b=>b.pub);
+
+function render(){
+  const L=cur(), s=stats(L), pubN=BETS.filter(b=>b.pub).length;
+  $('#headline').textContent = `${L.length} paris. Gagnés comme perdus.`;
+  $('#lede').textContent = view==='vip'
+    ? `Tous les paris envoyés aux membres VIP depuis le 21 avril 2026, dont ${pubN} aussi publiés sur le canal public. Chaque pari apparaît ici une fois le match terminé.`
+    : `Les ${pubN} picks gratuits du canal public depuis le 21 avril 2026. Ils ont été publiés avant chaque match et restent visibles sur le canal.`;
+  curve(L);
+  $('#strip').innerHTML = L.map(b=>`<i class="${b.r}"></i>`).join('');
+  $('#board').innerHTML = `
+    <div class="cell"><dt>Taux de réussite</dt><dd>${pct(s.wr)}</dd>
+      <div class="meter" aria-hidden="true"><span style="width:${s.wr*100}%"></span><em style="left:${s.be*100}%"></em></div>
+      <small>${s.g} gagnés, ${s.p} perdus${s.v?`, ${s.v} remboursé${s.v>1?'s':''}`:''}. Il faut ${pct(s.be)} pour être rentable.</small></div>
+    <div class="cell"><dt>Profit</dt><dd class="${s.profit<0?'neg':''}">${sgn(s.profit)} u</dd><small>à 1 unité par pari</small></div>
+    <div class="cell"><dt>Rendement (ROI)</dt><dd class="${s.roi<0?'neg':''}">${sgn(s.roi*100)} %</dd><small>profit ÷ total misé</small></div>
+    <div class="cell"><dt>Cote moyenne</dt><dd>${s.avg.toFixed(2)}</dd><small>sur les paris réglés</small></div>
+    <div class="cell"><dt>Pire passage</dt><dd class="neg">−${fr(s.dd)} u</dd><small>plus forte baisse depuis un sommet, et ${s.worst} défaite${s.worst>1?'s':''} de suite au maximum</small></div>`;
+  $('#avgc').textContent=s.avg.toFixed(2); $('#be').textContent=pct(s.be);
+  months(L); markets(L); shown=25; rows();
+}
+
+document.querySelectorAll('.switch button').forEach(b=>b.onclick=()=>{view=b.dataset.v;
+  document.querySelectorAll('.switch button').forEach(x=>x.setAttribute('aria-pressed',x===b)); render();});
+document.querySelectorAll('.chips button').forEach(b=>b.onclick=()=>{filt=b.dataset.r; shown=25;
+  document.querySelectorAll('.chips button').forEach(x=>x.setAttribute('aria-pressed',x===b)); rows();});
+$('#q').oninput=e=>{q=e.target.value.trim().toLowerCase(); shown=25; rows();};
+$('#more').onclick=()=>{shown+=50; rows();};
+render();
+// Ouvert comme mini-app dans Telegram : plein écran, couleurs de la marque, liens t.me ouverts dans Telegram
+const tg = window.Telegram && window.Telegram.WebApp;
+if (tg && tg.initData !== undefined && tg.platform !== 'unknown') {
+  tg.ready(); tg.expand();
+  try { tg.setHeaderColor('#031835'); tg.setBackgroundColor('#031835'); } catch(e) {}
+  document.querySelectorAll('a[href^="https://t.me/"]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); tg.openTelegramLink(a.href); }));
+}
+let rz; addEventListener('resize',()=>{clearTimeout(rz); rz=setTimeout(()=>curve(cur()),150);});
+</script>
+</body>
+</html>
