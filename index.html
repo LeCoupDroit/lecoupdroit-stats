@@ -205,6 +205,8 @@ footer{margin-top:80px;background:#020E22;border-top:1px solid var(--line);color
       <div><h3>Une unité par pari</h3><p>Tous les calculs supposent la même mise sur chaque pari : 1 unité. Un pari gagné à 1.40 rapporte +0,40 u, un pari perdu coûte −1 u.</p></div>
       <div><h3>Le taux à battre</h3><p>Avec une cote moyenne de <span id="avgc"></span>, il faut gagner au moins <span id="be"></span> des paris pour ne pas perdre d'argent. C'est la barre rouge sous le taux de réussite.</p></div>
       <div><h3>Public et VIP</h3><p>Les picks du canal public sont un échantillon des paris VIP. Ils sont publiés avant les matchs et vérifiables sur le canal Telegram.</p></div>
+      <div><h3>Quels paris sont comptés</h3><p>Uniquement les paris à cote de 1,55 ou moins, suivis depuis le 22 avril 2026. Sont exclus : les paris à cote supérieure à 1,55 et ceux de la période de test du 1er au 27 octobre 2026, réalisée avec une autre méthode.</p></div>
+      <div><h3>Un échantillon qui reste limité</h3><p>Sur <span id="nn"></span> paris, le rendement mesuré a une marge d'erreur d'environ ± <span id="moe"></span> points. Le rendement réel peut donc être sensiblement plus bas ou plus haut. Ces chiffres décrivent le passé, ils n'annoncent aucun gain.</p></div>
     </div>
   </section>
 </main>
@@ -219,7 +221,7 @@ footer{margin-top:80px;background:#020E22;border-top:1px solid var(--line);color
       </div>
     </div>
     <div class="legal">
-      <p><strong>Jouer comporte des risques : endettement, isolement, dépendance.</strong> Pour être aidé, appelez le 09 74 75 13 13 (appel non surtaxé). Les paris sportifs sont interdits aux mineurs.</p>
+      <p><strong>Jouer comporte des risques : endettement, isolement, dépendance.</strong> Pour être aidé, appelez le 09 74 75 13 13 (appel non surtaxé). Les paris sportifs sont interdits aux mineurs : ce site et les canaux Telegram sont réservés aux personnes de 18 ans et plus.</p>
       <p>Contenu d'analyse uniquement, pas un conseil de pari. Les résultats passés ne garantissent pas les résultats futurs. Cotes relevées au moment de la publication. Mis à jour le 23 novembre 2026.</p>
     </div>
   </div>
@@ -242,7 +244,8 @@ function stats(L){
   let cum=0, peak=0, dd=0, run=0, worst=0;
   for (const b of L){ cum+=pl(b); peak=Math.max(peak,cum); dd=Math.max(dd,peak-cum);
     if(b.r==='P'){run++;worst=Math.max(worst,run)} else if(b.r==='G') run=0; }
-  return {n:s.length, g, p:s.length-g, v:L.length-s.length, wr:g/s.length, avg, be:1/avg, profit, roi:profit/s.length, dd, worst};
+  const m=profit/s.length, sd=Math.sqrt(s.reduce((a,b)=>a+(pl(b)-m)**2,0)/Math.max(1,s.length-1)), moe=1.96*sd/Math.sqrt(s.length)*100;
+  return {n:s.length, g, p:s.length-g, v:L.length-s.length, wr:g/s.length, avg, be:1/avg, profit, roi:m, dd, worst, moe};
 }
 
 function curve(L){
@@ -327,7 +330,7 @@ function render(){
     <div class="cell"><dt>Rendement (ROI)</dt><dd class="${s.roi<0?'neg':''}">${sgn(s.roi*100)} %</dd><small>profit ÷ total misé</small></div>
     <div class="cell"><dt>Cote moyenne</dt><dd>${s.avg.toFixed(2)}</dd><small>sur les paris réglés</small></div>
     <div class="cell"><dt>Pire passage</dt><dd class="neg">−${fr(s.dd)} u</dd><small>plus forte baisse depuis un sommet, et ${s.worst} défaite${s.worst>1?'s':''} de suite au maximum</small></div>`;
-  $('#avgc').textContent=s.avg.toFixed(2); $('#be').textContent=pct(s.be);
+  $('#avgc').textContent=s.avg.toFixed(2); $('#be').textContent=pct(s.be); $('#nn').textContent=s.n; $('#moe').textContent=s.moe.toFixed(0);
   months(L); markets(L); shown=25; rows();
 }
 
